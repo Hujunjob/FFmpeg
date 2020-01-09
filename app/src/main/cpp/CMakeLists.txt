@@ -21,5 +21,10 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
         hujunplayer
-        avcodec avfilter avformat avutil swresample swscale
-        ${log-lib})
+        z
+        #依赖库的放置顺序也会影响运行
+        avfilter avformat avcodec avutil swresample swscale
+        ${log-lib}
+        OpenSLES
+        android   #窗口ANativeWindow库
+        )
